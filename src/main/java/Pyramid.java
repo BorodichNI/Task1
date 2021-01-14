@@ -1,8 +1,8 @@
 public class Pyramid implements Aggregate {
 
     @Override
-    public int[][] aggregate(int o) {
-        int[][] array = new int[o][o];
+    public int[][] aggregate(int size) {
+        int[][] array = new int[size][size];
 
         int row = 0;
         int col = 0;
@@ -14,9 +14,9 @@ public class Pyramid implements Aggregate {
         int a = 1;
 
 
-        for (int z = 0; i < o * o - 1; z++) {
+        for (int z = 0; i < size * size - 1; z++) {
 
-            for (int j = 0; j < o - step; j++) {
+            for (int j = 0; j < size - step; j++) {
                 array[row][col++] = x;
                 i++;
             }
@@ -24,28 +24,28 @@ public class Pyramid implements Aggregate {
             col--;
             ++step;
 
-            for (int k = 0; k < o - step; k++) {
+            for (int k = 0; k < size - step; k++) {
                 array[++row][col] = c;
                 i++;
             }
             c++;
 
-            for (int l = 0; l < o - step; l++) {
+            for (int l = 0; l < size - step; l++) {
                 array[row][--col] = v;
                 i++;
             }
             v++;
             ++step;
 
-            for (int m = 0; m < o - step; m++) {
+            for (int m = 0; m < size - step; m++) {
                 array[--row][col] = a;
                 i++;
             }
 
             a++;
             col++;
-            if (o % 2 != 0) {
-                for (int j = 0; j < o - step; j++) {
+            if (size % 2 != 0) {
+                for (int j = 0; j < size - step; j++) {
                     array[row][col] = x;
                 }
             }
