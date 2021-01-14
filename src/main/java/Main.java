@@ -1,13 +1,12 @@
 public class Main {
     public static void main(String[] args) {
 
+        ArrayPrinter printer = new ArrayPrinter();
         Snake snake = new Snake();
-        ArrayPrinter printer1 = new ArrayPrinter();
-        printer1.printer(snake.aggregate(5));
+        printer.print(snake.aggregate(5));
         System.out.println("-----------------");
         Pyramid pyramid = new Pyramid();
-        ArrayPrinter printer2 = new ArrayPrinter();
-        printer2.printer(pyramid.aggregate(5));
+        printer.print(pyramid.aggregate(5));
 
     }
 }
